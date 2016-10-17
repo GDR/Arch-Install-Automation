@@ -14,8 +14,8 @@ mkfs.ext4       -L HOME /dev/sda4
 # After we have to mount partitions
 
 mount /dev/sda3 /mnt
-mkdir /mnt/boot/efi
-mkdir /mnt/home
+mkdir -p /mnt/boot/efi
+mkdir -p /mnt/home
 mount /dev/sda1 /mnt/boot/efi
 mount /dev/sda4 /mnt/home
 swapon /dev/sda2
