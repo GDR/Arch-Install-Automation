@@ -44,3 +44,9 @@ arch-chroot /mnt locale-gen
 echo "LANG=en_US.UTF-8" > /mnt/etc/locale.conf
 
 arch-chroot /mnt mkinitcpio -p linux
+
+# Install grub
+
+arch-chroot /mnt pacman -Sy grub efibootmgr --noconfirm
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
+arch-chroot /mnt grub-config -o /boot/grub
