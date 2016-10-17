@@ -30,15 +30,10 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # Change root into the new system
 
-arch-chroot /mnt
-
 # Set timezone
-ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-hwclock --systohc
+ln -s /mnt/usr/share/zoneinfo/Europe/Moscow /mnt/etc/localtime
+arch-chroot /mnt hwclock --systohc
 
 # Set hostname
-echo 'Arch-Germany' >> /etc/hostname
-
-# Make initramfs
-mkinitcpio -p linux
+echo 'Arch-Germany' > /mnt/etc/hostname
 
