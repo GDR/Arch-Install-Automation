@@ -28,8 +28,6 @@ pacstrap /mnt base base-devel
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-# Change root into the new system
-
 # Set timezone
 ln -s /mnt/usr/share/zoneinfo/Europe/Moscow /mnt/etc/localtime
 arch-chroot /mnt hwclock --systohc
@@ -37,3 +35,9 @@ arch-chroot /mnt hwclock --systohc
 # Set hostname
 echo 'Arch-Germany' > /mnt/etc/hostname
 
+# Set locale
+echo "en_US.UTF-8 UTF-8" > /mnt/etc/locale.gen
+arch-chroot /mnt locale-gen
+echo "LANG=en_US.UTF-8" > /mnt/etc/locale.conf
+
+arch-chroot /mnt mkinitcpio -p linux
