@@ -20,6 +20,9 @@ mount /dev/sda1 /mnt/boot/efi
 mount /dev/sda4 /mnt/home
 swapon /dev/sda2
 
+mkdir -p /mnt/var/cache/pacman
+mount /dev/sdb1 /mnt/var/cache/pacman
+
 # Install base system
 
 pacstrap /mnt base base-devel
