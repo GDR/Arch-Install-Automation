@@ -8,8 +8,8 @@
 
 mkfs.vfat -F32  -n BOOT /dev/sda1
 mkswap          -L SWAP /dev/sda2
-mkfs.ext4       -L ROOT /dev/sda3
-mkfs.ext4       -L HOME /dev/sda4
+mkfs.ext4 -F    -L ROOT /dev/sda3
+mkfs.ext4 -F    -L HOME /dev/sda4
 
 # After we have to mount partitions
 
