@@ -53,3 +53,5 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 # Copy this to new OS
 cp -r $(pwd) /mnt/root
+
+reboot

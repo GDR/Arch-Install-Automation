@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+source ./global_functions.sh
+
+# Set network
+
+if ! check_internet_connection ; then
+    echo "Need internet connection"
+fi
+
 # Install aur
 
 echo "[archlinuxfr]
