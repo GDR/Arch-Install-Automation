@@ -17,9 +17,12 @@ if ! grep -Fxq "[archlinuxfr]" /etc/pacman.conf ; then
     Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
 fi
 pacman --noconfirm -Sy yaourt
+
 # Add GDR user and set password
 
 # Install git
+
+install_with_pacman git
 
 # Install vim
 

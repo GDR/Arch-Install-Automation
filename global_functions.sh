@@ -11,3 +11,7 @@ check_internet_connection() {
       return 1
     fi
 }
+
+install_with_pacman() {
+    pacman -S --noconfirm $1
+}
