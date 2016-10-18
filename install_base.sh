@@ -6,6 +6,7 @@ source ./global_functions.sh
 
 if ! check_internet_connection ; then
     echo "Need internet connection"
+    exit 1;
 fi
 
 # Install aur
