@@ -11,11 +11,12 @@ fi
 
 # Install aur
 
-echo "[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
+if ! grep -Fxq "[archlinuxfr]" ; then
+    echo "[archlinuxfr]
+    SigLevel = Never
+    Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
+fi
 pacman --noconfirm -Sy yaourt
-
 # Add GDR user and set password
 
 # Install git
