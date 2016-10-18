@@ -4,7 +4,7 @@
 
 echo "[archlinuxfr]
 SigLevel = Never
-Server = http://repo.archlinux.fr/\$arch"
+Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
 pacman --noconfirm -Sy yaourt
 
 # Add GDR user and set password
