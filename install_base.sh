@@ -11,6 +11,8 @@ pacman --noconfirm -Sy yaourt
 
 # Install git
 
+# Install vim
+
 # Install awesome wm
 
 # Install google-chrome
