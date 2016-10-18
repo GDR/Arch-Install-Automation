@@ -52,4 +52,4 @@ arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot/efi --bo
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 # Copy this to new OS
-cp $(pwd) /mnt/root
+cp -r $(pwd) /mnt/root
