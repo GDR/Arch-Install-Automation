@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+MOUNTPOINT="/mnt"
+
 run_quiet() {
     $@ > /dev/null 2>&1
 }
@@ -14,4 +16,8 @@ check_internet_connection() {
 
 install_with_pacman() {
     pacman -S --noconfirm $1
+}
+
+arch_chroot() {
+    arch-chroot ${MOUNTPOINT} /bin/bash -c $@
 }

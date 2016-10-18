@@ -26,6 +26,8 @@ install_with_pacman git
 
 # Install vim
 
+install_with_pacman vim
+
 # Install awesome wm
 
 # Install google-chrome
