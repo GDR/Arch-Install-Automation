@@ -12,11 +12,13 @@ fi
 # Install aur
 
 if ! grep -Fxq "[archlinuxfr]" /etc/pacman.conf ; then
-  echo "[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
+  echo "[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
 fi
 pacman --noconfirm -Sy yaourt
+
+# Add yaourt.rc
+
+# Add .gitconfig
 
 # Add GDR user and set password
 
