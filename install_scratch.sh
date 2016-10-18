@@ -37,7 +37,7 @@ genfstab -U ${MOUNTPOINT} >> /mnt/etc/fstab
 
 # Set timezone
 ln -s ${MOUNTPOINT}/usr/share/zoneinfo/Europe/Moscow /mnt/etc/localtime
-arch_chroot "hwclock --systohc"
+arch_chroot hwclock --systohc
 
 # Set hostname
 echo "Arch-Germany" > ${MOUNTPOINT}/etc/hostname
@@ -47,13 +47,13 @@ echo "en_US.UTF-8 UTF-8" > ${MOUNTPOINT}/etc/locale.gen
 arch_chroot "locale-gen"
 echo "LANG=en_US.UTF-8" > ${MOUNTPOINT}/etc/locale.conf
 
-arch_chroot "mkinitcpio -p linux"
+arch_chroot mkinitcpio -p linux
 
 # Install grub
 
-arch_chroot "pacman -Sy grub efibootmgr --noconfirm"
-arch_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub"
-arch_chroot "grub-mkconfig -o /boot/grub/grub.cfg"
+arch_chroot pacman -Sy grub efibootmgr --noconfirm
+arch_chroot grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
+arch_chroot grub-mkconfig -o /boot/grub/grub.cfg
 
 # Copy this to new OS
 cp -r $(pwd) ${MOUNTPOINT}/root
