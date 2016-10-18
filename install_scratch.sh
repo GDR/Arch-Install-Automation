@@ -51,7 +51,7 @@ arch_chroot "mkinitcpio -p linux"
 
 # Install grub
 
-arch-chroot "pacman -Sy grub efibootmgr --noconfirm"
+arch_chroot "pacman -Sy grub efibootmgr --noconfirm"
 arch_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub"
 arch_chroot "grub-mkconfig -o /boot/grub/grub.cfg"
 
