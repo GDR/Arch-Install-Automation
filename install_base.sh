@@ -11,7 +11,7 @@ fi
 
 # Install aur
 
-if ! grep -Fxq "[archlinuxfr]" ; then
+if ! grep -Fxq "[archlinuxfr]" /etc/pacman.conf ; then
     echo "[archlinuxfr]
     SigLevel = Never
     Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
