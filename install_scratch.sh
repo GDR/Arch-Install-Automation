@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # First have to wipe data on several partitions:
 # /dev/sda1 -- uEFI partition
@@ -36,7 +36,7 @@ ln -s /mnt/usr/share/zoneinfo/Europe/Moscow /mnt/etc/localtime
 arch-chroot /mnt hwclock --systohc
 
 # Set hostname
-echo 'Arch-Germany' > /mnt/etc/hostname
+echo "Arch-Germany" > /mnt/etc/hostname
 
 # Set locale
 echo "en_US.UTF-8 UTF-8" > /mnt/etc/locale.gen
