@@ -19,5 +19,5 @@ install_with_pacman() {
 }
 
 arch_chroot() {
-    arch-chroot ${MOUNTPOINT} /bin/bash -c $@
+    arch-chroot ${MOUNTPOINT} /bin/bash -c $1
 }
