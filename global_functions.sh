@@ -18,6 +18,10 @@ install_with_pacman() {
     pacman -Sy --noconfirm $1
 }
 
+install_with_yaourt() {
+    yaourt -Sy --noconfirm $1
+}
+
 arch_chroot() {
     arch-chroot ${MOUNTPOINT} $@
 }

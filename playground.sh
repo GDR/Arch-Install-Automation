@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
-source ./global_functions.sh
+ENVIRONMENT=(
+    "awesome"
+    "asd asd"
+)
 
-if check_internet_connection ; then
-    echo "UP"
-else
-    echo "DOWN"
-fi
+
+ASD+=(${ENVIRONMENT[@]})
+ASD+=(${ENVIRONMENT[@]})
+for i in "${ASD[@]}"
+do
+    :
+done
