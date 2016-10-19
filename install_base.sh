@@ -12,9 +12,10 @@ fi
 # Install aur
 
 if ! grep -Fxq "[archlinuxfr]" /etc/pacman.conf ; then
-  echo "[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
+  echo -e "[archlinuxfr]\nSigLevel = Never\nServer = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
 fi
-pacman --noconfirm -Sy yaourt
+
+install_with_pacman yaourt
 
 # Add yaourt.rc
 
