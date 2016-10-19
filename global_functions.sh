@@ -15,7 +15,7 @@ check_internet_connection() {
 }
 
 install_with_pacman() {
-    pacman -S --noconfirm $1
+    pacman -Sy --noconfirm $1
 }
 
 arch_chroot() {
